@@ -4,7 +4,7 @@ import cors from "cors";
 import userRouter from "./routes/user.js";
 import helmet from "helmet"
 const APP = express();
-const PORT = 4040;
+const PORT = 4041;
 
 APP.use(helmet());
 APP.use(bodyParser.json());
