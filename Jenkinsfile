@@ -10,7 +10,7 @@ pipeline {
                 script {
                     app = docker.build("fouzo09/crud-node-api")
                     app.inside {
-                        sh 'echo $(node /usr/src/app/index.js)'
+                        sh 'node -v'
                     }
                 }
             }
