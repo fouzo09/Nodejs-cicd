@@ -1,4 +1,6 @@
-FROM node:latest
+FROM node:alpine
+
+RUN apk --no-cache add curl
 
 WORKDIR /usr/src/app
 
