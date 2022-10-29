@@ -30,7 +30,7 @@ pipeline {
         }
         stage('DeployToServer') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 input 'Deploy to Production?'
