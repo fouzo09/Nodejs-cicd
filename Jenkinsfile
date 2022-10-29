@@ -37,7 +37,7 @@ pipeline {
                 milestone(1)
                 sshagent(credentials: ['AWS_NODE_1']) {
                     script{
-                        sh "ssh -o StrictHostKeyChecking=no ubuntu@$IP_NODE_1 cd /home/ubuntu && sudo mkdir fouzo"
+                        sh "ssh -o StrictHostKeyChecking=no ubuntu@$IP_NODE_1 cd /home/ubuntu && mkdir fouzo"
                     }
                     
                 }
