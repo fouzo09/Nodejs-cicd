@@ -36,9 +36,10 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 sshagent(credentials: ['AWS_NODE_1']) {
-                    sh '''
-                        ssh cd /home/ubuntu && mkdir fouzo09
-                    '''
+                    script{
+                        sh "ssh -o StrictHostKeyChecking=no ubuntu@$IP_NODE_1 cd /home/ubuntu && sudo mkdir fouzo"
+                    }
+                    
                 }
                 // withCredentials([usernamePassword(credentialsId: 'AWS_NODE_1', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                 //     script {
