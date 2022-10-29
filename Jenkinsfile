@@ -38,7 +38,11 @@ pipeline {
                 sshagent(credentials:['AWS_NODE_1']){
                     sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@$IP_NODE_1 uptime "mkdir teste"'
                 }
-                echo "success lgoin"
+                sshagent(credentials: ['AWS_NODE_1']) {
+                    sh '''
+                        sudo mkdir fouzo09
+                    '''
+                }
                 // withCredentials([usernamePassword(credentialsId: 'AWS_NODE_1', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                 //     script {
                 //         sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no $USERNAME@$IP_NODE_1 \"docker pull fouzo09/crud-node-api:${env.BUILD_NUMBER}\""
