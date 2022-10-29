@@ -37,7 +37,8 @@ pipeline {
                 milestone(1)
                 sshagent(credentials: ['AWS_NODE_1']) {
                     sh '''
-                         mkdir fouzo09
+                        cd /home/ubuntu
+                        mkdir fouzo109
                     '''
                 }
                 // withCredentials([usernamePassword(credentialsId: 'AWS_NODE_1', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
